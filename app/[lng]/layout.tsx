@@ -4,6 +4,8 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GitHubAPI } from '@/lib/github';
+import Statistics from '@/components/Statisctics';
+import { Suspense } from 'react';
 
 export async function generateStaticParams() {
     return languages.map((lng) => ({ lng }))
@@ -56,6 +58,9 @@ export default async function Layout({ children, params }: { children: React.Rea
                     <Footer lng={lng} />
                 </div>
             </div>
+            <Suspense fallback={null}>
+                <Statistics />
+            </Suspense>
         </body>
     </html>
 }

@@ -61,6 +61,8 @@ jobs:
               run: ${{ steps.config-package-manager.outputs.runner }} next build
               env:
                   GITHUB_TOKEN: ${{ github.token }}
+                  NEXT_PUBLIC_MATOMO_URL: ${{ vars.MATOMO_URL }}
+                  NEXT_PUBLIC_MATOMO_SITE_ID: ${{ vars.MATOMO_SITE_ID }}
 
             - name: Upload artifact
               uses: actions/upload-artifact@v4
