@@ -5,8 +5,13 @@
 @theme {
   --color-background: var(--color-white);
   --color-forground: var(--color-slate-800);
-  --color-primary: var(--color-blue-700);
-  --color-secondary: var(--color-blue-800);
+
+  --color-vtherm-primary: #800000;
+  --color-vtherm-secondary: #E67249;
+  --color-vtherm-tertiary: #306BE5;
+  --color-vtherm-quaternary: #3EB0F2;
+  --color-vtherm-light: #E7EFF9;
+  --color-vtherm-dark: #121214;
 }
 
 /* Variables CSS globales */
@@ -73,16 +78,21 @@ main {
   animation: slideUp 0.2s ease-out;
 }
 
-.main-content h1 {
-  @apply text-4xl text-primary font-bold py-4;
-}
+@layer components {
+  h1 {
+    @apply text-4xl text-vtherm-primary font-bold py-4;
+    @variant dark {
+      @apply text-vtherm-secondary;
+    }
+  }
 
-.main-content h2 {
-  @apply text-3xl text-secondary font-semibold py-4;
-}
+  h2 {
+    @apply text-3xl text-vtherm-secondary font-semibold py-4;
+  }
 
-.main-content h3 {
-  @apply text-2xl text-secondary py-4;
+  h3 {
+    @apply text-2xl text-vtherm-tertiary py-4;
+  }
 }
 
 .main-content p {

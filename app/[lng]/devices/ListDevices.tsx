@@ -21,7 +21,7 @@ const DeviceCard: React.FC<{ device: DeviceSpec }> = ({ device }) => {
     const { t } = useT('devices')
 
     return <LinkLocale href={`/devices/${device.slug}/`} className="bg-slate-100 rounded border-2 border-solid border-slate-300 text-gray-700 w-3xs">
-        <h3 className="text-center font-bold py-2">{device.title ? device.title : `${device.manufacturer} - ${device.model}`}</h3>
+        <h3 className="text-center text-lg font-bold py-2">{device.title ? device.title : `${device.manufacturer} - ${device.model}`}</h3>
         <div className="p-1 relative bg-white">
             <Image className="mx-auto" src={device.img} alt={`${device.manufacturer} ${device.model}`} width={256} height={256} />
             <p className={`px-4 py-1 text-sm font-bold badge ${device.state} absolute bottom-0 left-0 rounded-tr-lg`}>{t('states.' + device.state)}</p>
@@ -45,17 +45,17 @@ const ListDevices: React.FC<{ devices: DeviceSpec[] }> = ({ devices }) => {
     const { t } = useT('devices')
 
     return <div>
-        <div className="bg-slate-200 px-2 py-2 rounded text-gray-500">
+        <div className="bg-slate-200 dark:bg-vtherm-primary px-2 py-2 rounded text-gray-500 dark:text-vtherm-light">
             <form className="flex gap-2 flex-wrap" onSubmit={(evt) => evt.preventDefault()}>
-                <input name="manufacturer" onChange={(evt) => setUserFilter({ ...user_filter, manufacturer: evt.target.value })} type="text" className="bg-slate-50 flex-1 px-2 py-1" placeholder={t('manufacturer')} />
-                <input name="model" onChange={(evt) => setUserFilter({ ...user_filter, model: evt.target.value })} type="text" className="bg-slate-50 flex-1 px-2 py-1" placeholder={t('model')} />
-                <select name="support" onChange={(evt) => setUserFilter({ ...user_filter, state: evt.target.value })} className="bg-slate-50 flex-1 px-2 py-1">
+                <input name="manufacturer" onChange={(evt) => setUserFilter({ ...user_filter, manufacturer: evt.target.value })} type="text" className="bg-slate-50 dark:bg-vtherm-secondary/60 flex-1 px-2 py-1" placeholder={t('manufacturer')} />
+                <input name="model" onChange={(evt) => setUserFilter({ ...user_filter, model: evt.target.value })} type="text" className="bg-slate-50 dark:bg-vtherm-secondary/60 flex-1 px-2 py-1" placeholder={t('model')} />
+                <select name="support" onChange={(evt) => setUserFilter({ ...user_filter, state: evt.target.value })} className="bg-slate-50 dark:bg-vtherm-secondary/60 flex-1 px-2 py-1">
                     <option value=''>{t('all-devices')}</option>
                     <option className="text-green-500" value='supported'>{t('states.supported')}</option>
                     <option className="text-blue-500" value='community'>{t('states.community')}</option>
                     <option className="text-yellow-500" value='partially'>{t('states.partially')}</option>
                 </select>
-                <select name="type" onChange={(evt) => setUserFilter({ ...user_filter, type: evt.target.value })} className="bg-slate-50 flex-1 px-2 py-1">
+                <select name="type" onChange={(evt) => setUserFilter({ ...user_filter, type: evt.target.value })} className="bg-slate-50 dark:bg-vtherm-secondary/60 flex-1 px-2 py-1">
                     <option value=''>{t('all-types')}</option>
                     <option value='trv'>{t('types.trv')}</option>
                     <option value='climate'>{t('types.climate')}</option>
@@ -66,7 +66,7 @@ const ListDevices: React.FC<{ devices: DeviceSpec[] }> = ({ devices }) => {
                 </button> */}
             </form>
         </div>
-        <div className="bg-sky-100 flex gap-6 mt-4 rounded-2xl text-blue-900 px-6 py-3 items-center">
+        <div className="bg-sky-100 dark:bg-vtherm-tertiary dark:text-vtherm-light flex gap-6 mt-4 rounded-2xl text-blue-900 px-6 py-3 items-center">
             <InformationCircleIcon className="h-8" />
             <p>
                 {t('notice')}

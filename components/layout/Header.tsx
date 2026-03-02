@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
     }
 
     return (
-        <header className="sticky top-0 z-40 w-full border-b border-blue-900 backdrop-blur bg-blue-100 dark:bg-blue-900 dark:text-slate-50">
+        <header className="sticky top-0 z-40 w-full border-b border-blue-900 dark:border-vtherm-secondary/60 backdrop-blur bg-vtherm-quaternary text-vtherm-dark dark:bg-vtherm-primary dark:text-slate-50">
             <div className="container flex h-16 items-center justify-between px-6">
                 {/* Barre de recherche */}
                 <div className="flex-1 max-w-md pl-12 md:pl-0">
@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
                     href="https://github.com/jmcollin78/versatile_thermostat"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium hover:text-blue-600 text-blue-900 dark:text-blue-300 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium hover:text-vtherm-quaternary dark:text-vtherm-light transition-colors"
                 >
                     <CodeBracketIcon className="w-[18px] h-[18px]" />
                     <span className="hidden sm:inline">{t('on-github')}</span>

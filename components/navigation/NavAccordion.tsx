@@ -28,7 +28,7 @@ export const NavAccordion: React.FC<NavAccordionProps> = ({
     const { t } = useT('common')
 
     const activeStyles = isOpen
-        ? 'bg-blue-100/10 text-blue-200 font-medium'
+        ? 'bg-blue-100/10 text-vtherm-quaternary font-medium'
         : ' hover:text-sky-200 hover:bg-sky-100/5';
 
     //${isOpen ? 'text-[#7CFC00] bg-[#7CFC00]/5' : 'text-[#a1a1aa] hover:text-[#7CFC00] hover:bg-[#7CFC00]/5'}

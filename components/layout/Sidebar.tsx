@@ -6,7 +6,7 @@ import { NavItem } from '../navigation/NavItem';
 import { NavAccordion } from '../navigation/NavAccordion';
 import Image from 'next/image';
 import { useT } from '@/app/i18n/client';
-import logo from '@/public/logo.png';
+import logo from '@/public/logo.webp';
 
 export const Sidebar: React.FC<{ docref: string, docfiles?: (string | undefined)[] }> = ({ docref, docfiles }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,10 +39,10 @@ export const Sidebar: React.FC<{ docref: string, docfiles?: (string | undefined)
             {/* Logo / Branding */}
             <div className="flex flex-col items-center gap-3 px-4 py-6 border-b border-[#3a3a3a]">
                 <div className="flex items-center justify-center">
-                    <Image src={logo} alt="Logo" width={128} height={128} />
+                    <Image src={logo} alt="Logo" width={256} height={256} />
                 </div>
                 <div>
-                    <h1 className="text-lg font-semibold text-[#ffffff]">Versatile Thermostat</h1>
+                    <p className="text-lg font-semibold text-[#ffffff]">Versatile Thermostat</p>
                     {/* <p className="text-xs text-[#71717a]">Smart Climate Control</p> */}
                 </div>
             </div>
@@ -111,7 +111,7 @@ export const Sidebar: React.FC<{ docref: string, docfiles?: (string | undefined)
                 className={`
           fixed top-16 md:top-0 left-0 z-40 h-screen
           w-[247px]
-          bg-sky-800
+          bg-vtherm-dark/90
           dark:bg-sky-950
           dark:text-slate-400
           text-gray-200

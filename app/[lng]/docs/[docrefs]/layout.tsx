@@ -17,11 +17,11 @@ export default async function Layout({ children, params }: { children: React.Rea
     const { docrefs } = await params;
 
     return <div className=''>
-        <div className='bg-slate-200 w-full rounded-xs px-4 py-2 mb-5'>
+        <div className='bg-slate-200 dark:bg-vtherm-tertiary w-full rounded-xs px-4 py-2 mb-5'>
             <span className='underline'>Version :</span>
             <ul className='inline-block'>
                 {releases.map((x, i) =>
-                    <li key={i} className={'inline ml-3 transition-all duration-300 ' + (docrefs == x.tag_name ? 'font-semibold text-blue-700' : 'hover:text-blue-500 hover:underline')}>
+                    <li key={i} className={'inline ml-3 transition-all duration-300 ' + (docrefs == x.tag_name ? 'font-semibold text-blue-700 dark:text-vtherm-secondary' : 'hover:text-blue-500 dark:hover:text-vtherm-primary hover:underline')}>
                         {
                             docrefs == x.tag_name ? x.tag_name :
                                 <DocVersionLink toVersion={x.tag_name}>{x.tag_name}</DocVersionLink>

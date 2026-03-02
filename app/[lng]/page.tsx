@@ -23,7 +23,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
             {/* Hero Section */}
             <section className="pt-8 pb-12 text-center">
                 <div className="max-w-4xl mx-auto space-y-6">
-                    <h1 className="text-5xl md:text-6xl font-light">
+                    <h1 className="text-5xl md:text-6xl font-light text-vtherm-dark dark:text-vtherm-light">
                         Versatile Thermostat
                     </h1>
                     <p className="text-xl md:text-2xl text-[#a1a1aa] leading-relaxed">
@@ -55,32 +55,32 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
             {/* Features Grid */}
             <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <FeatureCard
-                    icon={<Cpu className="text-[#00D9FF] w-8 h-8" />}
+                    icon={<Cpu className="w-8 h-8" />}
                     title={t('cards.algo.title')}
                     description={t('cards.algo.desc')}
                 />
                 <FeatureCard
-                    icon={<Settings className="text-[#00BCD4] w-8 h-8" />}
+                    icon={<Settings className="w-8 h-8" />}
                     title={t('cards.flex.title')}
                     description={t('cards.flex.desc')}
                 />
                 <FeatureCard
-                    icon={<Gauge className="text-[#00BCD4] w-8 h-8" />}
+                    icon={<Gauge className="w-8 h-8" />}
                     title={t('cards.valve.title')}
                     description={t('cards.valve.desc')}
                 />
                 <FeatureCard
-                    icon={<Network className="text-[#4B9FD5] w-8 h-8" />}
+                    icon={<Network className="w-8 h-8" />}
                     title={t('cards.presence.title')}
                     description={t('cards.presence.desc')}
                 />
                 <FeatureCard
-                    icon={<Thermometer className="text-[#5BA8DC] w-8 h-8" />}
+                    icon={<Thermometer className="w-8 h-8" />}
                     title={t('cards.boiler.title')}
                     description={t('cards.boiler.desc')}
                 />
                 <FeatureCard
-                    icon={<Bolt className="text-[#5BA8DC] w-8 h-8" />}
+                    icon={<Bolt className="w-8 h-8" />}
                     title={t('cards.power.title')}
                     description={t('cards.power.desc')}
                 />
@@ -133,12 +133,12 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
             </section>
 
             {/* CTA Section */}
-            <section className="bg-linear-to-r from-blue-300 to-sky-200 rounded-2xl p-8 md:p-12 text-center border border-blue-100">
+            <section className="bg-linear-to-r from-blue-300 dark:from-vtherm-tertiary/80 to-sky-200 dark:to-vtherm-quaternary rounded-2xl p-8 md:p-12 text-center border border-blue-100 dark:border-vtherm-tertiary">
                 <div className="max-w-3xl mx-auto space-y-6">
                     <h2 className="text-3xl md:text-4xl font-normal text-blue-800">
                         {t('cta.title')}
                     </h2>
-                    <p className="text-lg text-grey-500">
+                    <p className="text-lg dark:text-vtherm-light">
                         {t('cta.desc')}
                     </p>
                     {/* <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -169,12 +169,12 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
     return (
-        <div className="group p-6 rounded-xl bg-blue-900 border border-[#3a3a3a] hover:border-[#7CFC00]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#7CFC00]/5">
-            <div className="mb-4">{icon}</div>
-            <h3 className="text-xl font-medium text-white mb-2 transition-colors">
+        <div className="group p-6 rounded-xl bg-vtherm-quaternary/70 dark:bg-vtherm-primary/80 hover:border-vtherm-secondary/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#7CFC00]/5">
+            <div className="mb-4 text-vtherm-secondary">{icon}</div>
+            <h3 className="text-xl font-medium dark:text-vtherm-light text-vtherm-primary mb-2 transition-colors">
                 {title}
             </h3>
-            <p className="text-stone-300 leading-relaxed">
+            <p className=" leading-relaxed dark:text-vtherm-quaternary">
                 {description}
             </p>
         </div>
