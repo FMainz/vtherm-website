@@ -30,8 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
 export default async function Layout({ children, params }: { children: React.ReactNode, params: Promise<{ lng: string }> }) {
     const githubapi = GitHubAPI.getInstance();
     const { lng } = await params;
-    const release: string = (await githubapi.getReleases()).filter(x => !x.prerelease)[0].tag_name ?? '8.6.0';
-    const filesDir = (await githubapi.getGitTreePath(`${release}/documentation/${lng}`))?.sha;
+    const filesDir = (await githubapi.getGitTreePath(`main/documentation/${lng}`))?.sha;
     const files = filesDir ? (await githubapi.getGitTree(filesDir))?.tree.filter((x) => x.type === 'blob' && x.path.endsWith('.md')).map((item) => item.path.split('/').pop()?.slice(0, -3)) : undefined;
     const { i18n } = await getT('common', { lng })
 
@@ -40,7 +39,7 @@ export default async function Layout({ children, params }: { children: React.Rea
             {/* Layout principal: Sidebar fixe + Contenu principal */}
             <div className="flex min-h-screen">
                 {/* Sidebar - 247px fixe sur desktop */}
-                <Sidebar docfiles={files} docref={release} />
+                <Sidebar docfiles={files} />
 
                 {/* Contenu principal */}
                 <div className="flex flex-col flex-1 min-w-0">

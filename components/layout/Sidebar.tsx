@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useT } from '@/app/i18n/client';
 import logo from '@/public/logo.webp';
 
-export const Sidebar: React.FC<{ docref: string, docfiles?: (string | undefined)[] }> = ({ docref, docfiles }) => {
+export const Sidebar: React.FC<{ docfiles?: (string | undefined)[] }> = ({ docfiles }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { t } = useT('common');
 
