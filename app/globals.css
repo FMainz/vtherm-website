@@ -101,7 +101,7 @@ nav.vtherm-navigation {
   }
 
   h3 {
-    @apply text-2xl text-vtherm-tertiary py-4;
+    @apply text-2xl text-vtherm-tertiary py-4 dark:text-vtherm-quaternary;
   }
 }
 

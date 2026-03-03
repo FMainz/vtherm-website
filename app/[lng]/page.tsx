@@ -89,18 +89,18 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
             {/* About Section */}
             <section className="max-w-4xl mx-auto space-y-14">
                 <div className="space-y-4">
-                    <h2 className="text-4xl font-normal text-blue-800">
+                    <h2 className="text-4xl font-normal ">
                         {t('why')}
                     </h2>
-                    <p className="text-lg text-[#a1a1aa] leading-relaxed">
+                    <p className="text-lg  leading-relaxed">
                         {t('why-explain')}
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                        <h3 className="text-2xl font-medium text-blue-800">Caractéristiques principales</h3>
-                        <ul className="space-y-2 text-[#a1a1aa]">
+                        <h3 className="text-2xl font-medium ">Caractéristiques principales</h3>
+                        <ul className="space-y-2 ">
                             {[
                                 'compatibility',
                                 'algorithms',
@@ -117,8 +117,8 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className="text-2xl font-medium text-blue-800">{t('easy-install')}</h3>
-                        <p className="text-[#a1a1aa] leading-relaxed">
+                        <h3 className="text-2xl font-medium ">{t('easy-install')}</h3>
+                        <p className=" leading-relaxed">
                             {t('easy-install-explain')}
                         </p>
                         <LinkDocs
@@ -174,7 +174,7 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
             <h3 className="text-xl font-medium dark:text-vtherm-light text-vtherm-primary mb-2 transition-colors">
                 {title}
             </h3>
-            <p className=" leading-relaxed dark:text-vtherm-quaternary">
+            <p className=" leading-relaxed dark:text-vtherm-light/70">
                 {description}
             </p>
         </div>
