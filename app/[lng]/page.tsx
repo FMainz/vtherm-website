@@ -15,12 +15,25 @@ import { LinkLocale } from "@/components/LinkLocale";
 import { getAlternatesMetadata, getT } from "../i18n";
 import Image from "next/image";
 import { Metadata } from "next";
+import { opengraph_defaults } from "@/lib/opengraph";
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
     const { lng } = await params;
+    const { t } = await getT('common', { lng });
+
     const alternates = getAlternatesMetadata('/', lng, { x_default: process.env.NEXT_PUBLIC_SITE_URL + '/' });
+    const title = 'Versatile Thermostat - ' + t('title');
     return {
-        alternates
+        title: {
+            absolute: title
+        },
+        alternates,
+        openGraph: {
+            title,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}/${lng}/`,
+            siteName: "Versatile Thermostat",
+            ...opengraph_defaults,
+        }
     }
 }
 
